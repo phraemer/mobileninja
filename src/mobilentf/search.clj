@@ -76,8 +76,16 @@
 
 
 ;;; Agent checker
-
-(def *message-agent* (agent {:id 7194566 :active true}))
+;;; i need to make this a startup argument but....
+;;; change the value of :id to a very recent message id
+;;; the indexer will crawl the site for messages from that number
+;;; remember if it's too old it will hammer the server so you 
+;;; should know what you are doing here even though i added a
+;;; delay of 10 seconds to prevent too many requests
+;;; you can get a recent message id from a message link
+;;; e.g. http://www.ninjatune.co.uk/forum/messages.php?id=7253124 <-- id
+ 
+(def *message-agent* (agent {:id NEEDMESSAGEIDHERE :active true}))
 
 (defn check-for-new-messages
   [last-msg]
