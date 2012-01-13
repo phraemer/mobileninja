@@ -1,0 +1,2 @@
+#!/bin/bash
+java -Xms32m -Xmx128m -cp mobilentf-1.0.0-SNAPSHOT-standalone.jar mobilentf.main 2>&1 > ntflog.txt &
